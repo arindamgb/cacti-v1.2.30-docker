@@ -1,0 +1,17 @@
+services:
+  cacti:
+    image: joehorn/cacti:1.2.30-ubuntu24.04
+    container_name: cacti
+    restart: unless-stopped
+    environment:
+      TZ: Asia/Dhaka
+    ports:
+      - "8090:80"
+    volumes:
+      - ./plugins:/opt/cacti/plugins
+      - ./resource:/opt/cacti/resource
+      - ./rra:/opt/cacti/rra
+      - ./scripts:/opt/cacti/scripts
+      - ./cacti-mysql-data:/var/lib/mysql
+      - ./mysql-configs-docker/mysql-init.sql:/docker-entrypoint-initdb.d/mysql-init.sql
+      - ./mysql-configs-docker/mysql-custom.cnf:/etc/mysql/conf.d/mysql-custom.cnf

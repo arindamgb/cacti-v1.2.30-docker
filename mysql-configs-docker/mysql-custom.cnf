@@ -1,0 +1,9 @@
+[mysqld]
+
+# Connection limits
+max_connections = 100
+
+# Timezone
+default_time_zone = '+06:00'
+
+# Put your custom configs here
