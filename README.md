@@ -123,7 +123,7 @@ Cacti v1.2.30 is now successfully deployed and ready for monitoring.
 ## References
 
 * **Cacti Official Website:** [https://www.cacti.net/](https://www.cacti.net/)
-* **Container Image Used:** [https://hub.docker.com/r/joehorn/cacti] (https://hub.docker.com/r/joehorn/cacti)
+* **Container Image Used:** [https://hub.docker.com/r/joehorn/cacti](https://hub.docker.com/r/joehorn/cacti)
 
 ---
 
