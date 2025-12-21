@@ -1,3 +1,132 @@
+# Cacti v1.2.30 Docker Deployment
+
+This repository provides a **Docker-based deployment** for **Cacti v1.2.30**, allowing quick setup and easy management using Docker Compose.
+
+---
+
+## Prerequisites
+
+* Docker
+* Docker Compose
+* Git
+
+---
+
+## Clone the Repository
+
+```bash
+git clone https://github.com/arindamgb/cacti-v1.2.30-docker.git
+cd cacti-v1.2.30-docker
+```
+
+---
+
+## MySQL Configuration
+
+### Change MySQL Root Password
+
+Update the MySQL root password in the following file:
+
+```text
+mysql-configs-docker/mysql-init.sql
+```
+
+---
+
+### Tune MySQL Configuration (Optional)
+
+If needed, adjust MySQL server settings here:
+
+```text
+mysql-configs-docker/mysql-custom.cnf
+```
+
+---
+
+## Initial Deployment
+
+Once configuration is complete, start the initial setup:
+
+```bash
+docker-compose -f docker-compose-init.yml up -d
+```
+
+---
+
+## Access the Web Interface
+
+Open your browser and visit:
+
+```text
+http://<your-ip>:8090/
+```
+
+---
+
+## Login Credentials
+
+```text
+Username: admin
+Password: admin
+```
+
+⚠️ **Important:** Change the default password immediately.
+
+### Password Requirements
+
+* Minimum **8 characters**
+* Must include:
+
+  * Uppercase letters
+  * Lowercase letters
+  * At least **1 special character**
+
+---
+
+## Installation Steps
+
+1. Accept the **GPL License Agreement** and click **Begin**
+2. Continue by accepting the default configuration options
+3. Tick **“I have read this statement”**
+4. Click **Next**
+5. Confirm the installation
+6. After completion, click **Get Started**
+
+---
+
+## Post-Installation (Security Hardening)
+
+To increase security, some directories must be mounted as **read-only**.
+
+1. Remove the initial Docker Compose file:
+
+   ```bash
+   rm -rf docker-compose-init.yml
+   ```
+
+2. Restart Cacti using the production compose file:
+
+   ```bash
+   docker-compose down
+   docker-compose up -d
+   docker-compose ps
+   ```
+
+---
+
+##  Cacti Is Ready
+
+Cacti v1.2.30 is now successfully deployed and ready for monitoring.
+
+---
+
+## References
+
+* **Cacti Official Website:** [https://www.cacti.net/](https://www.cacti.net/)
+* **Container Image Used:** [https://hub.docker.com/r/joehorn/cacti] (https://hub.docker.com/r/joehorn/cacti)
+
+---
+
 # Cacti ™
 
 [![Cacti Commit Audit](https://github.com/Cacti/cacti/actions/workflows/syntax.yml/badge.svg)](https://github.com/Cacti/cacti/actions/workflows/syntax.yml)

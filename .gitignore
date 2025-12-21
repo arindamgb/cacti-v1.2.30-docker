@@ -39,6 +39,9 @@
 # mark (!include/theme/mytheme = do not ignore mytheme)
 #
 
+# Ignore mysql data
+cacti-mysql-data/**
+
 # Ignore vim swap files
 *.swp
 *.rnd
